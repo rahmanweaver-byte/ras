@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinson Affordable Solutions | San Diego Ship Repair</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* Deep Navy Blue */
+            --secondary-color: #f4a261; /* Industrial Orange */
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .services {
+            padding: 60px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+        .services h2 {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            color: var(--primary-color);
+        }
+        .contact {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Robinson Affordable Solutions</h1>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Expert Maritime Repair & Maintenance</h2>
+        <p>Providing top-tier structural fabrication, routine maintenance, and system repairs for commercial and government vessels operating in San Diego.</p>
+        <a href="#contact" class="btn">Get a Quote</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Vessel Maintenance</h3>
+                <p>Comprehensive preventative and restorative maintenance to keep your ships operational and seaworthy.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Fabrication</h3>
+                <p>Expert welding and metal fabrication tailored to specific hull or deck modifications and repairs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Systems Overhaul</h3>
+                <p>Troubleshooting, repair, and replacement of critical mechanical and operational systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Ready to work with us?</h2>
+        <p>Located in the heart of San Diego, CA.</p>
+        <p><strong>Email:</strong> info@robinsonaffordablesolutions.com</p>
+        <p><strong>Phone:</strong> (555) 123-4567</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Robinson Affordable Solutions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
