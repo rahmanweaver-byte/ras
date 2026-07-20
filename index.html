@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinson Affordable Solutions | San Diego Ship Repair</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* Deep Navy Blue */
+            --secondary-color: #f4a261; /* Industrial Orange */
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #e89051;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 5%;
+            background-color: white;
+            text-align: left;
+        }
+        .about h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .about-text h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .expertise-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .expertise-item {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 4px;
+        }
+        .expertise-item h4 {
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            font-size: 0.95rem;
+        }
+        .expertise-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .stat-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        .stat-box .label {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .services {
+            padding: 60px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+        .services h2 {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        .service-card h3 {
+            color: var(--primary-color);
+        }
+        
+        .contact {
+            padding: 60px 5%;
+            text-align: center;
+            background-color: white;
+        }
+        .contact h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary-color);
+        }
+        .contact-card p {
+            margin: 10px 0;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                margin-left: 10px;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            .expertise-list {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Robinson Affordable Solutions</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Expert Maritime Repair & Maintenance</h2>
+        <p>Providing top-tier structural fabrication, routine maintenance, and system repairs for commercial and government vessels operating in San Diego.</p>
+        <p style="font-size: 1.05rem; max-width: 700px; margin: 0 auto 30px;">We leverage modern technology to work smarter — from digital diagnostics and specialized test equipment that pinpoint issues fast, to streamlined project tracking that keeps every job on schedule and on budget. By combining decades of hands-on naval expertise with today's best tools, we deliver precise, efficient results without the overhead of larger firms.</p>
+        <a href="#contact" class="btn">Get a Quote</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Robinson Affordable Solutions</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Expert Leadership Delivering Results</h3>
+                <p>
+                    Robinson Affordable Solutions was founded in May 2024 by Terrell L. Robinson and is led by a dynamic executive team combining deep technical expertise with strategic operations excellence. Together, our leadership brings 40+ years of progressive experience in naval systems, ship modernization, team development, and complex project management across military and industrial sectors.
+                </p>
+                <p>
+                    We specialize in delivering affordable, reliable solutions for residential, commercial, and maritime shipyard repairs. Our commitment is simple: combine affordability with world-class craftsmanship to serve the San Diego maritime community.
+                </p>
+                <div class="expertise-list">
+                    <div class="expertise-item">
+                        <h4>🔧 Naval Systems Installation</h4>
+                        <p>Combat systems, CANES, SIMS @ SEA, ALIS, UCKA, VDR, MQ-25 Ready Room</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h4>⚙️ Complex System Overhaul</h4>
+                        <p>Troubleshooting, repair, optimization of 3000+ naval circuits</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h4>🛠️ Fabrication & Welding</h4>
+                        <p>Fiber termination, multi-pin connectors, cable management, structural work</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h4>📋 Safety & Compliance</h4>
+                        <p>OSHA Maritime Certified, TS/SCI Eligible, proven safety excellence</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h4>👥 Strategic Team Leadership</h4>
+                        <p>Managed teams from 28 to 300+ personnel, process improvement, organizational development</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h4>💻 IT & Network Systems</h4>
+                        <p>Active Directory, vulnerability assessment, network troubleshooting, system administration</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="number">40+</div>
+                        <div class="label">Combined Years Experience</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">3000+</div>
+                        <div class="label">Naval Systems Managed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">300+</div>
+                        <div class="label">Personnel Led</div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section style="padding: 60px 5%; background-color: var(--bg-light); text-align: center;">
+        <h2 style="color: var(--primary-color); margin-bottom: 40px; font-size: 2.5rem;">Our Leadership Team</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Terrell Robinson Card -->
+            <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 4px solid var(--secondary-color);">
+                <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border: 4px solid var(--secondary-color); background-color: var(--primary-color); display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 4rem; font-weight: bold;">TR</span>
+                </div>
+                <h3 style="color: var(--primary-color); margin-top: 0;">Terrell L. Robinson</h3>
+                <p style="color: var(--secondary-color); font-weight: bold; font-size: 1.1rem; margin: 10px 0;">Founder & CEO</p>
+                <div style="text-align: left; font-size: 0.95rem; line-height: 1.8;">
+                    <p>
+                        Electronics Maintenance Technician III with 20+ years of hands-on naval systems expertise. Terrell brings a distinguished career spanning 12 years active-duty service (USS Kearsarge LHD-3) to senior technical leadership roles at General Dynamics Information Technology and SERCO.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        <strong>Key Expertise:</strong>
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li>✓ Combat systems and naval modernization (USS Portland LPD-25, Aegis Modernization)</li>
+                        <li>✓ Managed 3,000+ critical voice/data naval circuits</li>
+                        <li>✓ 100% quality and connectivity rating on military systems</li>
+                        <li>✓ Fiber termination, multi-pin QCI certification</li>
+                        <li>✓ TS/SCI Eligible clearance</li>
+                        <li>✓ Mentored 35+ technical professionals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rahman Weaver Card -->
+            <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 4px solid var(--secondary-color);">
+                <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border: 4px solid var(--secondary-color);">
+                    <img src="1771184304408.jpeg" alt="Rahman Weaver - CTO & COO" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3 style="color: var(--primary-color); margin-top: 0;">Rahman Weaver</h3>
+                <p style="color: var(--secondary-color); font-weight: bold; font-size: 1.1rem; margin: 10px 0;">Chief Technology Officer & Chief Operating Officer</p>
+                <div style="text-align: left; font-size: 0.95rem; line-height: 1.8;">
+                    <p>
+                        Senior operations leader with 20+ years of progressive military and industrial experience building and managing high-performing teams across critical missions. Currently Production Manager at General Dynamics Information Technology, leading $8M+ communications systems upgrades for USS Portland while managing 50+ engineering professionals.
+                    </p>
+                    
+                    <p style="margin-bottom: 10px; font-weight: bold; color: var(--primary-color);">Military Service & Leadership</p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 15px 0;">
+                        <li>✓ <strong>U.S. Marine Corps Officer (2009-2022):</strong> 13 years progressive leadership across five command billets</li>
+                        <li>✓ <strong>Platoon Commander:</strong> Led tactical operations and personnel readiness</li>
+                        <li>✓ <strong>Operations Officer (Multiple Tours):</strong> Planned and coordinated operations for 2,500-person regiment; synchronized training across 20+ subordinate units</li>
+                        <li>✓ <strong>Logistics Officer:</strong> Managed 1,500-person battalion with 400+ vehicles and 1,000+ weapons</li>
+                        <li>✓ <strong>Commander, 300-Person Organization:</strong> Selected ahead of 15+ peer officers; built division-wide training model for 1,500+ personnel</li>
+                        <li>✓ <strong>Operation Inherent Resolve (Iraq/Syria):</strong> Watch Officer providing daily intelligence reports to Secretary of Defense</li>
+                        <li>✓ <strong>Haiti Earthquake Relief (2010):</strong> Directed security operations at relief distribution site, ensuring safe delivery of humanitarian aid</li>
+                    </ul>
+
+                    <p style="margin-bottom: 10px; font-weight: bold; color: var(--primary-color);">Military Decorations & Recognition</p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 15px 0;">
+                        <li>✓ Joint Commendation Medal for meritorious service in Operation Inherent Resolve</li>
+                        <li>✓ Navy Commendation Medal for outstanding performance as Training Officer</li>
+                        <li>✓ Navy and Marine Corps Achievement Medal for exemplary performance</li>
+                    </ul>
+
+                    <p style="margin-bottom: 10px; font-weight: bold; color: var(--primary-color);">Education & Technical Credentials</p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 15px 0;">
+                        <li>✓ <strong>B.S. Aerospace Engineering</strong> — University of Texas at Austin (2008)</li>
+                        <li>✓ FAA Private Pilot's License (Single-Engine, Land) — 2019</li>
+                        <li>✓ Proficient in Microsoft Excel, Word, PowerPoint; Working knowledge of C++</li>
+                    </ul>
+
+                    <p style="margin-bottom: 10px; font-weight: bold; color: var(--primary-color);">Professional Achievements</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li>✓ Led 50+ person teams on $8M+ communications systems upgrades</li>
+                        <li>✓ Increased schedule adherence from 31% to 90%+ through process redesign</li>
+                        <li>✓ Built training program adopted division-wide by 1,500+ personnel</li>
+                        <li>✓ Managed $2.4M annual production with zero safety incidents</li>
+                        <li>✓ Oversaw training compliance for 22,000-person organization</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>🚢 Vessel Maintenance</h3>
+                <p>Comprehensive preventative and restorative maintenance to keep your ships operational and seaworthy.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔩 Custom Fabrication</h3>
+                <p>Expert welding and metal fabrication tailored to specific hull or deck modifications and repairs.</p>
+            </div>
+            <div class="service-card">
+                <h3>⚡ Systems Overhaul</h3>
+                <p>Troubleshooting, repair, and replacement of critical mechanical and operational systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Ready to Work With Us?</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <h3>📍 Location</h3>
+                <p>San Diego, California</p>
+                <p>Serving the heart of maritime San Diego since 2024</p>
+            </div>
+            <div class="contact-card">
+                <h3>📧 Email</h3>
+                <p><strong>info@robinsonaffordablesolutions.com</strong></p>
+                <p>Response within 24 hours</p>
+            </div>
+            <div class="contact-card">
+                <h3>📞 Phone</h3>
+                <p><strong>(555) 123-4567</strong></p>
+                <p>Available for consultations and quotes</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024-2026 Robinson Affordable Solutions LLC. All rights reserved. | San Diego Maritime Repair & Services</p>
+    </footer>
+
+</body>
+</html>
